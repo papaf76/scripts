@@ -192,7 +192,9 @@ make -j4
 sudo mv gsc.exe /usr/bin/gsc
 rm -rf bin-dos src bin/gsc.exe bin/decode.exe
 cd ..
+rm -rf bin bin-dos src
+cd ..
 sudo mv GSC /usr/share/
 if [ -z "$(grep 'export GSCDAT' /etc/profile)" ]; then
-	sudo echo "export GSCDAT=/usr/share/GSC" >> /etc/profile
+	echo "export GSCDAT=/usr/share/GSC" | sudo tee -a /etc/profile
 fi
